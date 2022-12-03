@@ -22,7 +22,7 @@ export const Login = () => {
             })
           );
 
-          navigate("/");
+          navigate("/home");
         } else {
           window.alert("Invalid login");
         }
@@ -33,7 +33,7 @@ export const Login = () => {
     <main className="container--login">
       <section>
         <form className="form--login" onSubmit={handleLogin}>
-          <h1>Project Name</h1>
+          <h1>Shelf Indulgence</h1>
           <h2>Please sign in</h2>
           <fieldset>
             <label htmlFor="inputEmail"> Email address </label>

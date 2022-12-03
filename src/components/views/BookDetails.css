@@ -1,0 +1,11 @@
+/* .bookDetails {
+    background-color: #080B3B;
+    border-style: dotted red;
+} */
+.bookText{
+  grid-row: auto;
+
+}
+body{
+    background-color: #050C1F;
+}

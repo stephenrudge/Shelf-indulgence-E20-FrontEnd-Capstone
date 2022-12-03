@@ -1,0 +1,16 @@
+.bookCard {
+    color: white;
+    display: flex;
+    display: table-row;
+    color: white;
+    background-color: #050C1F;
+
+}
+.toRead {
+    color: white;
+    display: flex;
+    
+}
+img {
+    width: 20%;
+}
