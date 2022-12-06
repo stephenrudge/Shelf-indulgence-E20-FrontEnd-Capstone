@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { json, Navigate, useNavigate } from "react-router-dom";
+import "./AddBook.css"
 
 export const BookForm = () => {
   const [book, update] = useState({
@@ -104,6 +105,7 @@ export const BookForm = () => {
             <option value="Poetry">Poetry</option>
             <option value="ScienceFiction">Science Fiction</option>
             <option value="History">History</option>
+            <option value="selfHelp">Self-Help</option>
             <option value="Other">Other</option>
           </select>
         </div>
@@ -146,6 +148,7 @@ export const BookForm = () => {
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
         className="btn btn-primary"
+        a
       >
         Add Book
       </button>

@@ -1,16 +1,47 @@
-.bookCard {
-    color: white;
-    display: flex;
-    display: table-row;
-    color: white;
-    background-color: #050C1F;
-
+body{
+    background-color: #040A1E;
 }
-.toRead {
-    color: white;
-    display: flex;
-    
+.bookCard {
+  /* color: white; */
+  display: flex;
+  display: table-row;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
 }
 img {
-    width: 20%;
+  width: 150px;
+  height: 250px;
+  display: table-row;
+  padding-bottom: 40px;
+}
+.toRead {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    border-collapse: collapse;
+    background-color: #1B2423;
+    border-radius: 50px;  
+    padding: 30px;
+    margin-left: 50px;
+      
+}
+h2{
+    margin-left: 50px;
+}
+.currentlyReading {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  border-collapse: collapse;
+  background-color: #1B2423;
+  border-radius: 50px;  
+  padding: 30px;
+  margin-left: 50px;
+}
+.bookCardContainer{
+    color: white;
 }

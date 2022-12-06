@@ -1,6 +1,12 @@
+img{
+  background-color: #1B2423;
+display: block;
+margin-right: 67px;
+}
 .h1,
 h1 {
   font-size: 2.5rem;
+  /* color: wheat; */
 }
 
 fieldset {

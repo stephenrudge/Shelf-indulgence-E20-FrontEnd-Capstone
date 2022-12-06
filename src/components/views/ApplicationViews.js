@@ -19,7 +19,7 @@ export const ApplicationViews = () => {
       <Routes>
         <Route path="/" element={
           <>
-             <h1>Shelf Indulgence</h1>
+             {/* <h1>Shelf Indulgence</h1> */}
     
         <Outlet />
         </> 

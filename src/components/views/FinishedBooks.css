@@ -1,0 +1,14 @@
+.finishBooks{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    border-collapse: collapse;
+    background-color: #1B2423;
+    border-radius: 50px;  
+    padding: 30px;
+    
+}
+h1{
+    color: white;;
+}

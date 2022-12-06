@@ -32,9 +32,10 @@ export const Login = () => {
   return (
     <main className="container--login">
       <section>
+          <img src={require("../views/shelf-indulgence-01.png")}></img>
         <form className="form--login" onSubmit={handleLogin}>
-          <h1>Shelf Indulgence</h1>
-          <h2>Please sign in</h2>
+          {/* <h1>Shelf Indulgence</h1> */}
+          <h1>Please sign in</h1>
           <fieldset>
             <label htmlFor="inputEmail"> Email address </label>
             <input

@@ -1,11 +1,43 @@
-/* .bookDetails {
-    background-color: #080B3B;
-    border-style: dotted red;
-} */
+.BookDetails {
+ 
+}
 .bookText{
-  grid-row: auto;
+  grid-column: auto;
+  border: solid light;
+  margin: 10px;
+  padding-left: 8px;
+  margin-right: 1000px;
+  box-shadow: whitesmoke;
+  border-radius: 10px;
+  word-wrap: break-word;
+  /* padding-left: 56px; */
+  color: white;
+  display: table-column 10px  ;
+}
+.startBook{
+background-color: lightblue;  
+border-radius: 50px;
+padding: 10px;
 
 }
-body{
+.finishBook{
+  background-color: lightblue;  
+  border-radius: 50px;
+  padding: 10px;
+ 
+  }
+  .editDetails{
+    background-color: lightblue;  
+    border-radius: 50px;
+      padding: 10px;
+      
+    }
+    .deleteBook{
+      background-color: red;  
+      border-radius: 50px;
+      color: white;
+      padding: 10px;
+      }
+/* body{
     background-color: #050C1F;
-}
+} */

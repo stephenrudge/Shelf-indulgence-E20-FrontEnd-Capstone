@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Book } from "./Book";
-//
+import "./BookList.css"
 export const BooksList = () => {
   const [books, setBook] = useState([]);
   const [readingBooks, setReadingBooks] = useState([]);
@@ -27,9 +27,11 @@ export const BooksList = () => {
   }, [books]);
 
   return (
-    <article className="bookCard">
-      <div className="currentlyReading">
+    <article className="bookCardContainer">
+      <h1>Shelf Indulgence</h1>
         <h2>Reading</h2>
+        <br></br>
+      <div className="currentlyReading">
         {readingBooks.map((book) => (
           <Book
             key={`book--${book.id}`}
@@ -43,34 +45,13 @@ export const BooksList = () => {
         ))}
                        
                         
-                        
+         <br></br>               
                     
       </div>
-{/* 
-      <div className="finishedReading">
-        <h2>Reading</h2>
-        {finishedBooks.map((book) => (
-          <Book
-            key={`book--${book.id}`}
-            id={book.id}
-            title={book.title}
-            author={book.author}
-            totalPageCount={book.totalPageCount}
-            bookType={book.bookType}
-            coverImg={book.coverImg}
-          />
-        ))}
-                       
-                        
-                        
-                    
-      </div> */}
-
-
-
-
-      <div className="toRead">
+          <div className="reading" />
         <h2>To Read</h2>
+      <div className="toRead">
+        <br></br>
         {toReadBooks.map((book) => (
           <Book
             key={`book--${book.id}`}

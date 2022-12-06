@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
 
+import "./EditBook.css"
+
 
 export const EditBooks = () => {
     const [book, updateEditBooks] = useState({
@@ -79,6 +81,7 @@ export const EditBooks = () => {
           <label htmlFor="bookType">Book Type:</label>
           <select
             name="bookType"
+            value={book.bookType}
             onChange={(evt) => {
                 const copy = { ...book };
                 copy.bookType = evt.target.value;
@@ -94,6 +97,7 @@ export const EditBooks = () => {
             <option value="Poetry">Poetry</option>
             <option value="ScienceFiction">Science Fiction</option>
             <option value="History">History</option>
+            <option value="selfHelp">Self-Help</option>
             <option value="Other">Other</option>
           </select>
         </div>
@@ -138,7 +142,7 @@ export const EditBooks = () => {
         className="btn btn-primary"
 
         >
-        Edit Book
+        Save 
       </button>
     </form>
   );

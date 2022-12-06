@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom"
 import { Book } from "./Book";
-
+import "./FinishedBooks.css"
 
 
 export const FinishedBooksList = () => {
@@ -19,6 +19,8 @@ console.log(finishedBooks)
   return (
    <>
    <h1>Finished Books</h1>
+   <section className="finishBooks">
+
    {finishedBooks.map((book) => (
        <Book
        key={`book--${book.id}`}
@@ -29,8 +31,9 @@ console.log(finishedBooks)
        bookType={book.bookType}
        coverImg={book.coverImg}
        />
-   ))}
+       ))}
        
+       </section>
        </>
    )
     }
