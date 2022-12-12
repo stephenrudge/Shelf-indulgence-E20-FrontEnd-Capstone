@@ -8,6 +8,7 @@ export const EditBooks = () => {
     const [book, updateEditBooks] = useState({
         title: "",
         author: "",
+        currentPageCount:0,
         totalPageCount: 0,
         bookType: "",
         coverImg: "",
@@ -31,6 +32,8 @@ export const EditBooks = () => {
           },
           body: JSON.stringify(book),
         })
+        navigate(`../home/bookDetails/${booksId}` ,
+        {replace:true})
           };
           
           
@@ -98,8 +101,28 @@ export const EditBooks = () => {
             <option value="ScienceFiction">Science Fiction</option>
             <option value="History">History</option>
             <option value="selfHelp">Self-Help</option>
+            <option value="Nonfiction">Non-Fiction</option>
             <option value="Other">Other</option>
           </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="CurrentPageCount">Current Page Count:</label>
+          <input
+            required
+            autoFocus
+            type="number"
+            className="form-control"
+            placeholder="Current Page Count"
+            value={book.currentPageCount}
+            onChange={(evt) => {
+                const copy = { ...book };
+                copy.currentPageCount = parseInt(evt.target.value);
+                updateEditBooks(copy);
+            }}
+            />
         </div>
       </fieldset>
       <fieldset>

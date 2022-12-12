@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Book } from "./Book";
 import "./BookList.css"
+
 export const BooksList = () => {
   const [books, setBook] = useState([]);
   const [readingBooks, setReadingBooks] = useState([]);
@@ -26,12 +27,13 @@ export const BooksList = () => {
     setFinishedBooks(finishedReadingFilter)
   }, [books]);
 
+ 
   return (
     <article className="bookCardContainer">
       <h1>Shelf Indulgence</h1>
         <h2>Reading</h2>
         <br></br>
-      <div className="currentlyReading">
+      <div className={`${readingBooks.length > 0 ? "currentlyReading": "" }`}  >
         {readingBooks.map((book) => (
           <Book
             key={`book--${book.id}`}
@@ -50,7 +52,7 @@ export const BooksList = () => {
       </div>
           <div className="reading" />
         <h2>To Read</h2>
-      <div className="toRead">
+        <div className={`${toReadBooks.length > 0 ? "toRead": "" }`}  >
         <br></br>
         {toReadBooks.map((book) => (
           <Book

@@ -25,9 +25,11 @@ export const BookForm = () => {
       totalPageCount: book.totalPageCount,
       bookType: book.bookType,
       coverImg: book.coverImg,
-      statusId: book.statusId,
+      statusId: book.statusId,  
     };
 
+    
+    event.preventDefault()
     const sendData = async () => {
       const options = {
         method: "POST",
@@ -40,10 +42,19 @@ export const BookForm = () => {
       await response.json();
       const response1 = await fetch(`http://localhost:8088/usersBooks`, options);
       await response1.json();
+      
     };
-    sendData();
+    
+    if(book.title != "" &&
+    book.author != "" &&
+    book.totalPageCount != "" &&
+    book.bookType != "" &&
+    book.coverImg != "" ){
+      sendData()
+      navigate("/home");
+      window.location.reload(false)
+    }  else {window.alert("fill out all data")}
     event.book.reset();
-    navigate("/addBook");
   };
 
   return (
@@ -52,11 +63,10 @@ export const BookForm = () => {
       <fieldset>
         <div className="form-group">
           <label htmlFor="title">Title:</label>
-          <input
-            required
-            autoFocus
+          <input  
             type="text"
             className="form-control"
+            required
             placeholder="Title of Book"
             value={book.title}
             onChange={(evt) => {
@@ -75,6 +85,7 @@ export const BookForm = () => {
             type="text"
             className="form-control"
             placeholder="Author of Book"
+            required="required"
             value={book.author}
             onChange={(evt) => {
               const copy = { ...book };
@@ -90,6 +101,7 @@ export const BookForm = () => {
           <label htmlFor="bookType">Book Type:</label>
           <select
             name="bookType"
+            required="required"
             onChange={(evt) => {
               const copy = { ...book };
               copy.bookType = evt.target.value;
@@ -106,6 +118,7 @@ export const BookForm = () => {
             <option value="ScienceFiction">Science Fiction</option>
             <option value="History">History</option>
             <option value="selfHelp">Self-Help</option>
+            <option value="Nonfiction">Non-Fiction</option>
             <option value="Other">Other</option>
           </select>
         </div>
@@ -118,6 +131,7 @@ export const BookForm = () => {
             type="number"
             className="form-control"
             placeholder="0"
+            required
             value={book.totalPageCount}
             onChange={(evt) => {
               const copy = { ...book };
@@ -133,6 +147,7 @@ export const BookForm = () => {
           <input
             type="url"
             className="url"
+            required="required"
             placeholder="https://example.com"
             pattern="https://.*"
             size=""
@@ -147,10 +162,8 @@ export const BookForm = () => {
       </fieldset>
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-        className="btn btn-primary"
-        a
-      >
-        Add Book
+        className="btn btn-primary">
+     Add Book
       </button>
     </form>
   );

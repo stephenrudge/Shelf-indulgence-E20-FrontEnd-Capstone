@@ -18,8 +18,13 @@ export const FinishedBooksList = () => {
 console.log(finishedBooks)
   return (
    <>
-   <h1>Finished Books</h1>
-   <section className="finishBooks">
+    <div className="title">
+    <h1>Finished Books</h1>
+    <div className="emptyBooks">
+      {finishedBooks.length === 0 ? "You do not have any Finished Books" : "" }  </div> 
+   </div>
+   <section className={`${finishedBooks.length >0 ? "finishBooks": "" }`}  > 
+   
 
    {finishedBooks.map((book) => (
        <Book
