@@ -9,6 +9,9 @@ export const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    <style>
+
+    </style>
 
     return fetch(`http://localhost:8088/users?email=${email}`)
       .then((res) => res.json())
@@ -32,12 +35,16 @@ export const Login = () => {
   return (
     <main className="container--login">
       <section>
-          <img src={require("../views/shelf-indulgence-01.png")}></img>
+        
+         
+            <img className="image" src={require("../views/shelf-indulgence-01.png")}></img>
+         
+       
         <form className="form--login" onSubmit={handleLogin}>
           {/* <h1>Shelf Indulgence</h1> */}
-          <h1>Please sign in</h1>
+          <h1 className="PleaseSignIn">Please Sign In</h1>
           <fieldset>
-            <label htmlFor="inputEmail"> Email address </label>
+            <label className="email" htmlFor="inputEmail"> Email address </label>
             <input
               type="email"
               value={email}
@@ -49,13 +56,19 @@ export const Login = () => {
             />
           </fieldset>
           <fieldset>
-            <button type="submit">Sign in</button>
+            <button className="sign-in" type="submit">Sign In</button>
           </fieldset>
         </form>
       </section>
       <section className="link--register">
         <Link to="/register">Not a member yet?</Link>
       </section>
+
+
+
+
+
+
     </main>
   );
 };

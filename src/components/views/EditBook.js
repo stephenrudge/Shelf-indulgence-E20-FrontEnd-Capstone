@@ -12,6 +12,7 @@ export const EditBooks = () => {
         totalPageCount: 0,
         bookType: "",
         coverImg: "",
+        starDate: ""
         // statusId: 1,
       });   
       const {booksId} = useParams()
@@ -156,6 +157,24 @@ export const EditBooks = () => {
                 const copy = { ...book };
                 copy.coverImg = evt.target.value;
                 updateEditBooks(copy);
+            }}
+            />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="totalPageCount">Start Date:</label>
+          <input
+            // required autoFocus
+            type="date"
+            className="form-control"
+            placeholder="mm-dd-yyyy"
+            required
+            value={book.startDate}
+            onChange={(evt) => {
+              const copy = { ...book };
+              copy.startDate = evt.target.value;
+              updateEditBooks(copy);
             }}
             />
         </div>

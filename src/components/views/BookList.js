@@ -43,6 +43,7 @@ export const BooksList = () => {
             totalPageCount={book.totalPageCount}
             bookType={book.bookType}
             coverImg={book.coverImg}
+            startDate={book.startDate}
           />
         ))}
                        
@@ -63,6 +64,7 @@ export const BooksList = () => {
             totalPageCount={book.totalPageCount}
             bookType={book.bookType}
             coverImg={book.coverImg}
+            startDate={book.startDate}
             statusId={book.statusId}
           />
         ))}

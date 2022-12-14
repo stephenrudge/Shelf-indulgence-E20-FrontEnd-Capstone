@@ -6,9 +6,9 @@ body{
   display: flex;
   display: table-row;
   color: white;
-  width: fit-content;
-  height: fit-content;
+  width: 240px;
   padding: 10px;
+  /* border: solid red; */
 }
 img {
   width: 150px;
@@ -21,9 +21,9 @@ img {
   align-items: center;
   width: fit-content;
   height: fit-content;
-  /* border-collapse: collapse; */
-  background-color: #1B2423;
-  border-radius: 50px;  
+
+  background-color: #1b2423;
+  border-radius: 50px;
   padding: 30px;
   margin-left: 50px;
       
@@ -36,9 +36,9 @@ h2{
   align-items: center;
   width: fit-content;
   height: fit-content;
-  /* border-collapse: collapse; */
-  background-color: #1B2423;
-  border-radius: 50px;  
+
+  background-color: #1b2423;
+  border-radius: 50px;
   padding: 30px;
   margin-left: 50px;
 }

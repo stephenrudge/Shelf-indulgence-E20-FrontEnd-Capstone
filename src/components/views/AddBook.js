@@ -10,6 +10,7 @@ export const BookForm = () => {
     bookType: "",
     coverImg: "",
     statusId: 1,
+    startDate: ""
   });
 
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ export const BookForm = () => {
   };
 
   return (
+    <div className="container">
     <form className="bookForm">
       <h2 className="bookForm_title">Add New Book</h2>
       <fieldset>
@@ -74,7 +76,7 @@ export const BookForm = () => {
               copy.title = evt.target.value;
               update(copy);
             }}
-          />
+            />
         </div>
       </fieldset>
       <fieldset>
@@ -92,7 +94,7 @@ export const BookForm = () => {
               copy.author = evt.target.value;
               update(copy);
             }}
-          />
+            />
         </div>
       </fieldset>
 
@@ -107,7 +109,7 @@ export const BookForm = () => {
               copy.bookType = evt.target.value;
               update(copy);
             }}
-          >
+            >
             <option value="Placeholder">---</option>
             <option value="mystery">Mystery</option>
             <option value="Romance">Romance</option>
@@ -138,7 +140,7 @@ export const BookForm = () => {
               copy.totalPageCount = parseInt(evt.target.value);
               update(copy);
             }}
-          />
+            />
         </div>
       </fieldset>
       <fieldset>
@@ -157,14 +159,36 @@ export const BookForm = () => {
               copy.coverImg = evt.target.value;
               update(copy);
             }}
-          />
+            />
         </div>
       </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="totalPageCount">Start Date:</label>
+          <input
+            // required autoFocus
+            type="date"
+            className="form-control"
+            // placeholder="0"
+            required
+            value={book.startDate}
+            onChange={(evt) => {
+              const copy = { ...book };
+              copy.startDate = evt.target.value;
+              update(copy);
+            }}
+            />
+        </div>
+      </fieldset>
+      <fieldset></fieldset>
+      <div className="footer">
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
         className="btn btn-primary">
      Add Book
       </button>
+          </div>
     </form>
+          </div>
   );
 };
