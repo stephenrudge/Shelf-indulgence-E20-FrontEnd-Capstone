@@ -41,6 +41,7 @@ console.log(finishedBooks)
        totalPageCount={book.totalPageCount}
        bookType={book.bookType}
        coverImg={book.coverImg}
+       startDate={book.startDate}
        />
        ))}
        

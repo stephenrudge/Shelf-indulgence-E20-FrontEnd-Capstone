@@ -22,13 +22,15 @@ export const BookDetails = () => {
 
   //   //
 
+  
+
   const handleClickFinishBook = () => {
     fetch(`http://localhost:8088/usersBooks/${books.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ statusId: 3 }),
+      body: JSON.stringify({ statusId: 3 , }),
     });
   };
 

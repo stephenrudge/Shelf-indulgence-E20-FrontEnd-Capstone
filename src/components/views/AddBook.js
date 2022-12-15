@@ -26,7 +26,8 @@ export const BookForm = () => {
       totalPageCount: book.totalPageCount,
       bookType: book.bookType,
       coverImg: book.coverImg,
-      statusId: book.statusId,  
+      statusId: book.statusId, 
+      startDate: book.startDate 
     };
 
     
