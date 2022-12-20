@@ -21,7 +21,13 @@ console.log(finishedBooks)
     <div className="title">
     <h1>Finished Books</h1>
     <div className="emptyBooks">
-      {finishedBooks.length === 0 ? "You do not have any Finished Books" : "" }  </div> 
+      {
+      finishedBooks.length === 0
+       ? <span> You do not have any Finished Books click 
+        <Link to="/addBook"> here </Link> to add your first book` </span>
+       : "" 
+       }
+      </div> 
    </div>
    <section className={`${finishedBooks.length >0 ? "finishBooks": "" }`}  > 
    
@@ -35,6 +41,7 @@ console.log(finishedBooks)
        totalPageCount={book.totalPageCount}
        bookType={book.bookType}
        coverImg={book.coverImg}
+       startDate={book.startDate}
        />
        ))}
        

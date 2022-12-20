@@ -27,6 +27,9 @@ export const BooksList = () => {
     setFinishedBooks(finishedReadingFilter)
   }, [books]);
 
+
+  
+  const formattedDateStamp = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
  
   return (
     <article className="bookCardContainer">
@@ -43,6 +46,7 @@ export const BooksList = () => {
             totalPageCount={book.totalPageCount}
             bookType={book.bookType}
             coverImg={book.coverImg}
+            startDate={book.startDate}
           />
         ))}
                        
@@ -63,6 +67,7 @@ export const BooksList = () => {
             totalPageCount={book.totalPageCount}
             bookType={book.bookType}
             coverImg={book.coverImg}
+            startDate={book.startDate}
             statusId={book.statusId}
           />
         ))}

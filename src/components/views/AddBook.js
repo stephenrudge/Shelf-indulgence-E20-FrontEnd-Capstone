@@ -6,10 +6,13 @@ export const BookForm = () => {
   const [book, update] = useState({
     title: "",
     author: "",
+    currentPageCount: 0,  
     totalPageCount: 0,
     bookType: "",
     coverImg: "",
+    startDate: "",
     statusId: 1,
+    
   });
 
   const navigate = useNavigate();
@@ -25,7 +28,9 @@ export const BookForm = () => {
       totalPageCount: book.totalPageCount,
       bookType: book.bookType,
       coverImg: book.coverImg,
-      statusId: book.statusId,  
+      startDate: book.startDate,
+      statusId: book.statusId, 
+       
     };
 
     
@@ -54,10 +59,12 @@ export const BookForm = () => {
       navigate("/home");
       window.location.reload(false)
     }  else {window.alert("fill out all data")}
-    event.book.reset();
+    // event.book.reset();
   };
 
+
   return (
+    <div className="container">
     <form className="bookForm">
       <h2 className="bookForm_title">Add New Book</h2>
       <fieldset>
@@ -74,7 +81,7 @@ export const BookForm = () => {
               copy.title = evt.target.value;
               update(copy);
             }}
-          />
+            />
         </div>
       </fieldset>
       <fieldset>
@@ -92,7 +99,7 @@ export const BookForm = () => {
               copy.author = evt.target.value;
               update(copy);
             }}
-          />
+            />
         </div>
       </fieldset>
 
@@ -107,18 +114,19 @@ export const BookForm = () => {
               copy.bookType = evt.target.value;
               update(copy);
             }}
-          >
+            >
             <option value="Placeholder">---</option>
-            <option value="mystery">Mystery</option>
+            <option value="Mystery">Mystery</option>
             <option value="Romance">Romance</option>
             <option value="Adventure">Adventure</option>
             <option value="Crime">Crime</option>
             <option value="Fantasy">Fantasy</option>
             <option value="Poetry">Poetry</option>
-            <option value="ScienceFiction">Science Fiction</option>
+            <option value="Science Fiction">Science Fiction</option>
             <option value="History">History</option>
-            <option value="selfHelp">Self-Help</option>
-            <option value="Nonfiction">Non-Fiction</option>
+            <option value="Self Help">Self-Help</option>
+            <option value="Non-Fiction">Non-Fiction</option>
+            <option value="Fiction">Fiction</option>
             <option value="Other">Other</option>
           </select>
         </div>
@@ -138,7 +146,7 @@ export const BookForm = () => {
               copy.totalPageCount = parseInt(evt.target.value);
               update(copy);
             }}
-          />
+            />
         </div>
       </fieldset>
       <fieldset>
@@ -157,14 +165,35 @@ export const BookForm = () => {
               copy.coverImg = evt.target.value;
               update(copy);
             }}
-          />
+            />
         </div>
       </fieldset>
+      {/* <fieldset>
+        <div className="form-group">
+          <label htmlFor="totalPageCount">Start Date:</label>
+          <input
+            // required autoFocus
+            type="date"
+            className="form-control"
+            // placeholder="0"
+            required
+            value={book.startDate}
+            onChange={(evt) => {
+              const copy = { ...book };
+              copy.startDate = evt.target.value;
+              update(copy);
+            }}
+            />
+        </div>
+      </fieldset> */}
+      <div className="footer">
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
         className="btn btn-primary">
      Add Book
       </button>
+          </div>
     </form>
+          </div>
   );
 };
