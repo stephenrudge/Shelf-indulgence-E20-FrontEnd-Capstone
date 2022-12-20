@@ -12,7 +12,8 @@ export const EditBooks = () => {
         totalPageCount: 0,
         bookType: "",
         coverImg: "",
-        starDate: ""
+        startDate: "",
+        
         // statusId: 1,
       });   
       const {booksId} = useParams()
@@ -36,10 +37,7 @@ export const EditBooks = () => {
         navigate(`../home/bookDetails/${booksId}` ,
         {replace:true})
           };
-          
-          
-          
-          
+        
           
           return (
               <form className="bookForm">
@@ -76,7 +74,7 @@ export const EditBooks = () => {
                 copy.author = evt.target.value;
                 updateEditBooks(copy);
             }}
-            />
+              />
         </div>
       </fieldset>
 
@@ -92,17 +90,18 @@ export const EditBooks = () => {
                 updateEditBooks(copy);
             }}
             >
-            <option value="Placeholder">---</option>
-            <option value="mystery">Mystery</option>
+              <option value="Placeholder">---</option>
+            <option value="Mystery">Mystery</option>
             <option value="Romance">Romance</option>
             <option value="Adventure">Adventure</option>
             <option value="Crime">Crime</option>
             <option value="Fantasy">Fantasy</option>
             <option value="Poetry">Poetry</option>
-            <option value="ScienceFiction">Science Fiction</option>
+            <option value="Science Fiction">Science Fiction</option>
             <option value="History">History</option>
-            <option value="selfHelp">Self-Help</option>
-            <option value="Nonfiction">Non-Fiction</option>
+            <option value="Self Help">Self-Help</option>
+            <option value="Non-Fiction">Non-Fiction</option>
+            <option value="Fiction">Fiction</option>
             <option value="Other">Other</option>
           </select>
         </div>
@@ -165,6 +164,7 @@ export const EditBooks = () => {
         <div className="form-group">
           <label htmlFor="totalPageCount">Start Date:</label>
           <input
+            
             // required autoFocus
             type="date"
             className="form-control"
@@ -179,6 +179,7 @@ export const EditBooks = () => {
             />
         </div>
       </fieldset>
+      
       <button
         onClick={(clickEvent) => handleClickEditBook(clickEvent)}
         className="btn btn-primary"

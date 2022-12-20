@@ -18,6 +18,7 @@ img {
 }
 .toRead {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   width: fit-content;
   height: fit-content;
@@ -33,6 +34,7 @@ h2{
 }
 .currentlyReading {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   width: fit-content;
   height: fit-content;
